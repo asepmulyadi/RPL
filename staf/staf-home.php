@@ -1,8 +1,8 @@
 <?php
-    include "../koneksi.php";
+    include "../conn.php";
     
     $sql    = "SELECT * FROM t_buku";
-    $query  = mysql_query ($sql);
+    $result = mysql_query ($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">

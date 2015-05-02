@@ -1,7 +1,7 @@
 <?php
 	$server="localhost";
 	$username="root";
-	$password="";
+	$password="mbuh";
 	$database="rpl";
 	
 	$connect=mysql_connect($server, $username, $password);
