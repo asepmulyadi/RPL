@@ -108,7 +108,7 @@
 				<br/>
 				<br/>
 				<div class="col-lg-5">
-					<form class="form-horizontal" action="proses_edit.php" method="POST">
+					<form class="form-horizontal" action="proses_edit.php?id=<?php echo $_GET['id_buku']; ?>" method="POST">
 						<fieldset>
 							<div class="form-group">
 								<div class="col-lg-12">
