@@ -10,3 +10,12 @@ create table buku(
 insert into buku values(null, 'Rekayasa Perangkat Lunak', 2012, 'Mulyadi', 'Balai Pustaka');
 insert into buku values(null, 'Algoritma dan Pemrograman', 2012, 'Danang', 'Balai Pustaka');
 insert into buku values(null, 'Teknik Multimedia', 2012, 'Samekto', 'Balai Pustaka');
+create table petugas(
+	id int auto_increment primary key,
+	nama varchar(30) not null,
+	jabatan varchar(30) not null,
+	username varchar(20) not null,
+	password varchar(20) not null
+);
+insert into petugas values(null, 'Tommy', 'Kasir', 'tommy', 'tommy');
+insert into petugas values(null, 'Ani', 'Sekretaris', 'ani', 'ani');
