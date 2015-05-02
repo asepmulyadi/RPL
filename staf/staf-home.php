@@ -1,7 +1,7 @@
 <?php
     include "../conn.php";
     
-    $sql    = "SELECT * FROM t_buku";
+    $sql    = "SELECT * FROM buku";
     $result = mysql_query ($sql);
 ?>
 <!DOCTYPE html>
@@ -324,21 +324,21 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
+                                            <th>Judul</th>
+                                            <th>Pengarang</th>
+                                            <th>Penerbit</th>
+                                            <th>Tahun</th>
+                                            <th>Aksi</th>
                                         </tr>
                                     </thead>
                                     <tbody>
                                         <?php while ($buku = mysql_fetch_assoc ($result)) { ?>
                                         <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
+                                            <td><?php echo $buku['judul']; ?></td>
+                                            <td><?php echo $buku['pengarang']; ?></td>
+                                            <td><?php echo $buku['penerbit']; ?></td>
+                                            <td><?php echo $buku['tahun']; ?></td>
+                                            <td class="center"><a href="staf-edit_buku.php?id_buku=<?php echo $buku['id']; ?>">Edit </a>| <a href="staf-delete_buku.php?id_buku=<?php echo $buku['id']; ?>">Delete</a></td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
