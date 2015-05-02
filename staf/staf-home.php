@@ -338,7 +338,7 @@
                                             <td><?php echo $buku['pengarang']; ?></td>
                                             <td><?php echo $buku['penerbit']; ?></td>
                                             <td><?php echo $buku['tahun']; ?></td>
-                                            <td class="center"><a href="staf-edit_buku.php?id_buku=<?php echo $buku['id']; ?>">Edit </a>| <a href="staf-delete_buku.php?id_buku=<?php echo $buku['id']; ?>">Delete</a></td>
+                                            <td class="center"><a href="staf-edit_buku.php?id_buku=<?php echo $buku['id']; ?>">Edit </a>| <a href="staf-delete_buku.php?id_buku=<?php echo $buku['id']; ?>" onClick="return confirm('Apakah Anda Yakin Menghapus Buku\n\n<?php echo $buku['judul']; ?>\n\nOK untuk Hapus\nCancel untuk Batal');">Delete</a></td>
                                         </tr>
                                         <?php } ?>
                                     </tbody>
