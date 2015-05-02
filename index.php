@@ -28,6 +28,7 @@
 						</div>
 						<div class="form-group">
 							<div class="col-lg-12">
+								<input name="password" type="password" class="form-control" id="password" placeholder="Password" required>
 							</div>
 						</div>
 						<div class="form-group">
