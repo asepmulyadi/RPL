@@ -1,14 +1,13 @@
 <?php
     include "../conn.php";
+    session_start();
 	
     $sql    = "SELECT *FROM buku";
     $result = mysql_query ($sql);
 ?>
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -57,7 +56,7 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">SB Admin v2.0</a>
+                <a class="navbar-brand" href="index.html">SB Admin - <?php echo $_SESSION['nama']; ?></a>
             </div>
             <!-- /.navbar-header -->
 
@@ -307,51 +306,43 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div>
-                        <a href="">Home</a> -> List Buku
+                        <a href="">Home</a> -> Tambah Buku
                     </div>
-                </div>
-            </div>
-            <!-- /.row -->
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="panel panel-default">
-                        <div class="panel-heading">
-                            DataTables Advanced Tables
-                        </div>
-                        <!-- /.panel-heading -->
-                        <div class="panel-body">
-                            <div class="dataTable_wrapper">
-                                <table class="table table-striped table-bordered table-hover" id="dataTables-example">
-                                    <thead>
-                                        <tr>
-                                            <th>Rendering engine</th>
-                                            <th>Browser</th>
-                                            <th>Platform(s)</th>
-                                            <th>Engine version</th>
-                                            <th>CSS grade</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <?php while ($buku = mysql_fetch_array($result)) { ?>
-                                        <tr class="odd gradeX">
-                                            <td>Trident</td>
-                                            <td>Internet Explorer 4.0</td>
-                                            <td>Win 95+</td>
-                                            <td class="center">4</td>
-                                            <td class="center">X</td>
-                                        </tr>
-                                        <?php } ?>
-                                    </tbody>
-                                </table>
-                            </div>
-                            <!-- /.table-responsive -->
-                        </div>
-                        <!-- /.panel-body -->
-                    </div>
-                    <!-- /.panel -->
-                </div>
-                <!-- /.col-lg-12 -->
-            </div>
+				</div>
+				<br/>
+				<br/>
+				<div class="col-lg-5">
+					<form class="form-horizontal" action="proses_tambah.php" method="POST">
+						<fieldset>
+							<div class="form-group">
+								<div class="col-lg-12">
+									<input name="judul" type="text" class="form-control" id="judul" placeholder="Judul Buku" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-12">
+									<input name="tahun" type="number" min="1945" max="2015" class="form-control" id="tahun" placeholder="Tahun Terbit" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-12">
+									<input name="pengarang" type="text" class="form-control" id="pengarang" placeholder="Pengarang" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-12">
+									<input name="penerbit" type="text" class="form-control" id="penerbit" placeholder="Penerbit" required>
+								</div>
+							</div>
+							<div class="form-group">
+								<div class="col-lg-12">
+									<button type="submit" class="btn btn-primary">Submit</button>
+								</div>
+							</div>
+						</fieldset>
+					</form>
+				</div>
+			</div>
         </div>
         <!-- /#page-wrapper -->
 
