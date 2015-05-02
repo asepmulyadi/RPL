@@ -112,7 +112,7 @@
 						<fieldset>
 							<div class="form-group">
 								<div class="col-lg-12">
-									<input name="kode" type="text" class="form-control" id="kode" placeholder="Kode Buku" value="<?php echo $buku['kode']; ?>" required>
+									<input name="kode" type="text" class="form-control" id="kode" placeholder="Kode Buku" value="<?php echo $buku['kode']; ?>" required readonly>
 								</div>
 							</div>
 							<div class="form-group">

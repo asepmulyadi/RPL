@@ -4,6 +4,19 @@
 	if(!isset($_SESSION['nama'])){
 		header('location:../index.php');
 	}
+    
+    $sql    = "SELECT kode FROM buku ORDER BY id DESC LIMIT 1";
+    $result = mysql_query ($sql);
+    $kode   = mysql_fetch_array ($result)['kode'];
+    $blkg   = str_replace ("KB", "", $kode);
+    $kode   = (integer) $blkg + 1;
+    if ($kode > 0 && $kode < 10) {
+        $kode = "KB00" . $kode;
+    }else if ($kode >= 10 && $kode < 100) {
+        $kode = "KB0" . $kode;
+    }else if ($kode >= 100 && $kode < 1000) {
+        $kode = "KB" . $kode;
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -108,7 +121,7 @@
 						<fieldset>
 							<div class="form-group">
 								<div class="col-lg-12">
-									<input name="kode" type="text" class="form-control" id="kode" placeholder="Kode Buku" required>
+									<input name="kode" type="text" class="form-control" id="kode" value="<?php echo $kode; ?>" placeholder="Kode Buku" required readonly>
 								</div>
 							</div>
 							<div class="form-group">

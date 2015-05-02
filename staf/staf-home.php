@@ -119,6 +119,7 @@
                                 <table class="table table-striped table-bordered table-hover" id="dataTables-example">
                                     <thead>
                                         <tr>
+                                            <th>Kode</th>
                                             <th>Judul</th>
                                             <th>Pengarang</th>
                                             <th>Penerbit</th>
@@ -129,6 +130,7 @@
                                     <tbody>
                                         <?php while ($buku = mysql_fetch_array($result)) { ?>
                                         <tr class="odd gradeX">
+                                            <td><?php echo $buku['kode']; ?></td>
                                             <td><?php echo $buku['judul']; ?></td>
                                             <td><?php echo $buku['pengarang']; ?></td>
                                             <td><?php echo $buku['penerbit']; ?></td>
