@@ -14,7 +14,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>SB Admin 2 - Bootstrap Admin Theme</title>
+    <title>SB Admin</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="../bower_components/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -106,6 +106,11 @@
 				<div class="col-lg-5">
 					<form class="form-horizontal" action="proses_tambah.php" method="POST">
 						<fieldset>
+							<div class="form-group">
+								<div class="col-lg-12">
+									<input name="kode" type="text" class="form-control" id="kode" placeholder="Kode Buku" required>
+								</div>
+							</div>
 							<div class="form-group">
 								<div class="col-lg-12">
 									<input name="judul" type="text" class="form-control" id="judul" placeholder="Judul Buku" required>
