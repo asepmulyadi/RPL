@@ -9,4 +9,6 @@
 		echo "Failed";
 	}
 	mysql_select_db($database) or die ("Database tidak dapat diakses");
+	
+	//sep udah sep, sep sep sep
 ?>
