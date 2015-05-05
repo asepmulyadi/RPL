@@ -1,7 +1,9 @@
 <?php
 	include "conn.php";
 	session_start();
-	$dataAdmin = mysql_query("select *from petugas where username='$_POST[username]' and password='$_POST[password]'") or die(mysql_error());
+	$username=$_POST['username'];
+	$password=$_POST['password'];
+	$dataAdmin = mysql_query("select *from petugas where username='$username' and password='$password'") or die(mysql_error()); //ini proses select di database
 	if($data = mysql_fetch_array($dataAdmin)){
 		$_SESSION['nama'] = $data['nama'];
 		header('location:staf/staf-home.php');

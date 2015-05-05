@@ -4,9 +4,9 @@
 	if(!isset($_SESSION['nama'])){
 		header('location:../index.php');
 	}
-	
-    $sql    = "SELECT *FROM buku where id=$_GET[id_buku]";
-    $result = mysql_query ($sql);
+	$id_buku = $_GET['id_buku'];
+    $sql    = "SELECT *FROM buku where id=$id_buku";
+    $result = mysql_query ($sql); //eksekusi dan menyimpan hasil eksekusi.
 	$buku = mysql_fetch_array($result);
 ?>
 <!DOCTYPE html>

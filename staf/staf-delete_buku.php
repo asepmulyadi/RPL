@@ -7,7 +7,7 @@
     if ($id != "") {
         include "../conn.php";
         $sql    = "DELETE FROM buku WHERE id = $id";
-        mysql_query ($sql);
+        mysql_query ($sql); //eksekusi
     }
     header('location:staf-home.php');
 ?>
